@@ -60,36 +60,36 @@ void insertion_sort_list(listint_t **list)
 	return;
 	aux = (*list)->next;
   
-  while (aux)
+  	while (aux)
 	{
 		    i++;
     
-  while (aux->prev)
+  	while (aux->prev)
 	{
 
-  if (aux->prev->n > aux->n)
+  	if (aux->prev->n > aux->n)
 	{
   
-  if (!aux->prev->prev)
+  	if (!aux->prev->prev)
 	swap_head(list, aux);
   
-  else if (aux->prev->prev && aux->next)
+  	else if (aux->prev->prev && aux->next)
 	swap_middle(aux);
   
-  else if (!aux->next)
+  	else if (!aux->next)
 	swap_tail(aux);
 	print_list(*list);
 	}
   
-  else
+  	else
 	aux = aux->prev;
 	}
   
-  while (j <= i)
+  	while (j <= i)
 	{
-      aux = aux->next;
-		  j++;
-  }
-      j = 0;
-  }
+      		aux = aux->next;
+		j++;
+  	}
+      		j = 0;
+  	}
 }
