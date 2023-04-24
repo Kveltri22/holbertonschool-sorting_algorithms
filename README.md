@@ -1,36 +1,46 @@
-Sorting Algorithm
+Sorting Algorithm README
 
-This repository contains implementations of several sorting algorithms along with animations of how they work.
+This repository contains implementations of several sorting algorithms in the C language, along with animations to help visualize how they work. The sorting algorithms included are:
 
-Sorting Algorithms
-
-The following sorting algorithms are implemented:
-
-Bubble Sort
-Selection Sort
-Insertion Sort
-Merge Sort
-Quick Sort
-Each algorithm is implemented in both Python and JavaScript.
+Bubble sort
+Selection sort
+Insertion sort
+Merge sort
+Quick sort
+Each sorting algorithm is implemented in its own separate file, with a main function that demonstrates its use by sorting an array of integers. The implementation of each sorting algorithm includes functions to print the array before and after sorting, to aid in understanding how the algorithm works.
 
 Big O Notation
 
-The time complexity of each algorithm is also included in the corresponding implementation file. Additionally, a summary of the Big O notation for each algorithm is provided below:
+Big O notation is used to describe the time complexity of an algorithm, or how its running time scales with the size of the input. The time complexity of each sorting algorithm implemented in this repository is as follows:
 
-Algorithm	Best Case	Average Case	Worst Case
-Bubble Sort	O(n)	O(n^2)	O(n^2)
-Selection Sort	O(n^2)	O(n^2)	O(n^2)
-Insertion Sort	O(n)	O(n^2)	O(n^2)
-Merge Sort	O(n log n)	O(n log n)	O(n log n)
-Quick Sort	O(n log n)	O(n log n)	O(n^2)
-Animations
+Bubble sort: O(n^2)
+Selection sort: O(n^2)
+Insertion sort: O(n^2)
+Merge sort: O(n log n)
+Quick sort: O(n log n)
+Sorting Algorithm Animations
 
-To help visualize how each algorithm works, there are animations included with each implementation. The print_array and print_list functions are used to display the arrays and lists at each iteration of the sorting process.
+The animations included in this repository use the ncurses library to display the sorting process in real time. Each animation shows the input array, with the currently selected elements highlighted in red, and the sorted elements highlighted in green.
 
-How to Run
+To run the animations, simply compile the C file of the desired sorting algorithm using your preferred C compiler, and run the resulting executable. The animation should begin automatically.
 
-To run the Python implementation of any algorithm, simply run the corresponding .py file. To run the JavaScript implementation, open the corresponding .html file in a web browser.
+Usage
 
-Credits
+To use any of the sorting algorithms in your own C programs, simply include the relevant header file at the beginning of your program and call the sorting function with your input array as a parameter. For example, to use the merge sort algorithm, you would include "merge_sort.h" at the beginning of your program, and call the "merge_sort" function with your input array as a parameter.
 
-The code for the sorting algorithms is based on the book "Introduction to Algorithms" by Cormen, Leiserson, Rivest, and Stein. The animations were created using the Python library matplotlib.
+#include "merge_sort.h"
+
+int main() {
+    int arr[] = {5, 2, 9, 1, 5, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Before sorting:\n");
+    print_array(arr, n);
+
+    merge_sort(arr, 0, n-1);
+
+    printf("After sorting:\n");
+    print_array(arr, n);
+
+    return 0;
+}
