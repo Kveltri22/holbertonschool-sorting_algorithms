@@ -23,24 +23,3 @@ Sorting Algorithm Animations
 The animations included in this repository use the ncurses library to display the sorting process in real time. Each animation shows the input array, with the currently selected elements highlighted in red, and the sorted elements highlighted in green.
 
 To run the animations, simply compile the C file of the desired sorting algorithm using your preferred C compiler, and run the resulting executable. The animation should begin automatically.
-
-Usage
-
-To use any of the sorting algorithms in your own C programs, simply include the relevant header file at the beginning of your program and call the sorting function with your input array as a parameter. For example, to use the merge sort algorithm, you would include "merge_sort.h" at the beginning of your program, and call the "merge_sort" function with your input array as a parameter.
-
-#include "merge_sort.h"
-
-int main() {
-    int arr[] = {5, 2, 9, 1, 5, 6};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    printf("Before sorting:\n");
-    print_array(arr, n);
-
-    merge_sort(arr, 0, n-1);
-
-    printf("After sorting:\n");
-    print_array(arr, n);
-
-    return 0;
-}
