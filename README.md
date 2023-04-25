@@ -1,25 +1,13 @@
-Sorting Algorithm README
+0x1A. C - Sorting algorithms & big O
 
-This repository contains implementations of several sorting algorithms in the C language, along with animations to help visualize how they work. The sorting algorithms included are:
+General
 
-Bubble sort
-Selection sort
-Insertion sort
-Merge sort
-Quick sort
-Each sorting algorithm is implemented in its own separate file, with a main function that demonstrates its use by sorting an array of integers. The implementation of each sorting algorithm includes functions to print the array before and after sorting, to aid in understanding how the algorithm works.
+Four different sorting algorithms. What is the big O notation, and how to evaluate the time complexity. How to select the best sorting algorithm for a given input. What is a stable algorithm.
 
-Big O Notation
+Bubble Sort: Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is replaced until the list is sorted. Bubble sort has a time complexity of O(n^2).
 
-Big O notation is used to describe the time complexity of an algorithm, or how its running time scales with the size of the input. The time complexity of each sorting algorithm implemented in this repository is as follows:
+Merge Sort: Merge sort is a divide -and-conquer algorithm that recursively divides the input list into smaller sub-lists, sorts those sub-lists, and then merges them back together. Merge sort has a time complexity of O(n^2).
 
-Bubble sort: O(n^2)
-Selection sort: O(n^2)
-Insertion sort: O(n^2)
-Merge sort: O(n log n)
-Quick sort: O(n log n)
-Sorting Algorithm Animations
+Quick Sort: Quick sort is another divide-and-conquer algorithm that selects an element called the pivot and partitions the list around the pivot. It then recursively sorts the sub-lists on either side of the pivot. Quick sort has an average time complexity of O(n log n), but can have a worst-case time complexity of O(n^2).
 
-The animations included in this repository use the ncurses library to display the sorting process in real time. Each animation shows the input array, with the currently selected elements highlighted in red, and the sorted elements highlighted in green.
-
-To run the animations, simply compile the C file of the desired sorting algorithm using your preferred C compiler, and run the resulting executable. The animation should begin automatically.
+Insertion Sort: Insertion sort is a simple sorting algorithm that builds the final sorted list one item at a time. It iterates through the input list, comparing each item to the ones before it and inserting it into the correct position. Inserting sort has a time complexity of O(n^2), but can be more efficient than other algorithms for small lists or partially sorted lists.
