@@ -8,9 +8,9 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	  unsigned int count = 0, value = 0;
-	  int aux;
-  
+ 	unsigned int count = 0, value = 0;
+	int aux;
+
 	  if (array == NULL || size < 2)
 	  return;
 
@@ -20,7 +20,7 @@ void bubble_sort(int *array, size_t size)
     for (value = 0; value < (size - count - 1); value++)
 	  {
 	
-	  if (array[value] > array[value + 1])
+    if (array[value] > array[value + 1])
 	  {
 		aux = array[value];
 		array[value] = array[value + 1];
