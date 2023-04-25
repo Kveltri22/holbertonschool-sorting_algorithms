@@ -7,7 +7,6 @@
  * @size: array's size
  * Return: void
  */
-
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
@@ -24,14 +23,13 @@ void quick_sort(int *array, size_t size)
  * @size: array's size
  * Return: i
  */
-
 int partition(int *array, int lo, int hi, size_t size)
 {
 	int i = lo - 1, j = lo;
 	int pivot = array[hi], aux = 0;
-  
-  for (; j < hi; j++)
-{
+
+	for (; j < hi; j++)
+	{
 		if (array[j] < pivot)
 		{
 			i++;
@@ -42,9 +40,9 @@ int partition(int *array, int lo, int hi, size_t size)
 				array[j] = aux;
 				print_array(array, size);
 			}
-	  }
+		}
 	}
-  if (array[i + 1] != array[hi])
+	if (array[i + 1] != array[hi])
 	{
 		aux = array[i + 1];
 		array[i + 1] = array[hi];
