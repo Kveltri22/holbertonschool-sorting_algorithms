@@ -1,95 +1,38 @@
 #include "sort.h"
 
 /**
- * swap_head - swaps a node
- * @list: linked list with node
- * @aux: auxilary
+ * insertion_sort_list - sort doubly linked list insertion style
+ * @list: list to sort
+ * Return: void
  */
-
-void swap_head(listint_t **list, listint_t *aux)
-{
-	aux->prev->next = aux->next;
-
-	if (aux->next)
-	aux->next->prev = aux->prev;
-	aux->next->prev = aux->prev;
-	aux->prev = aux->prev->prev;
-	aux->next->prev = aux;
-	*list = aux;
-}
-
-/**
- * swap_middle - swap a node
- * @aux: aux node
- */
-
-void swap_middle(listint_t *aux)
-{
-	aux->prev->next = aux->next;
-	aux->next->prev = aux->prev;
-	aux->prev->prev->next = aux;
-	aux->next = aux->next->prev;
-	aux->next->prev = aux;
-}
-
-/**
- * swap_tail - swaps a node
- *  @aux: aux node to compare
- */
-
-void swap_tail(listint_t *aux)
-{
-	aux->prev->next = aux->next;
-	aux->next = aux->prev;
-	aux->prev->prev->next = aux;
-	aux->prev = aux->next->prev;
-	aux->next->prev = aux;
-}
-
-/**
- * insertion_sort_list - insertion sort for algorithm
- * @list: linked lists
- */
-
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *aux = NULL;
-	int i = 0, j = 0;
+	listint_t *node = NULL, *tmp = NULL;
 
-	if (!list || !(*list)->next)
-	return;
-	aux = (*list)->next;
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return;
 
-	while (aux)
+	node = *list;
+	node = node->next;
+	while (node)
 	{
-		i++;
-
-	while (aux->prev)
-	{
-
-	if (aux->prev->n > aux->n)
-	{
-
-	if (!aux->prev->prev)
-	swap_head(list, aux);
-
-	else if (aux->prev->prev && aux->next)
-	swap_middle(aux);
-
-	else if (!aux->next)
-	swap_tail(aux);
-	print_list(*list);
-	}
-
-	else
-	aux = aux->prev;
-	}
-
-	while (j <= i)
-	{
-		aux = aux->next;
-		j++;
-	}
-		j = 0;
+		while (node->prev && node->n < (node->prev)->n)
+		{
+			tmp = node;
+			if (node->next)
+				(node->next)->prev = tmp->prev;
+			(node->prev)->next = tmp->next;
+			node = node->prev;
+			tmp->prev = node->prev;
+			tmp->next = node;
+			if (node->prev)
+				(node->prev)->next = tmp;
+			node->prev = tmp;
+			if (tmp->prev == NULL)
+				*list = tmp;
+			print_list(*list);
+			node = node->prev;
+		}
+		node = node->next;
 	}
 }
